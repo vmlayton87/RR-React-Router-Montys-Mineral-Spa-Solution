@@ -1,10 +1,11 @@
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 
 import './App.css';
 
 import Home from './components/Home'
 import About from './components/About'
 import Packages from './components/Packages'
+
 
 
 function App() {
@@ -34,9 +35,11 @@ function App() {
         </header>
 
         <div className="display">
+        <Routes>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/packages" render={() => <Packages packages={packages}/>}  />
+          </Routes>
         </div>
 
       </Router>
